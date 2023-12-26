@@ -38,6 +38,7 @@ jobs:
         ng new portfolio --minimal --skip-git --skip-tests
         cd portfolio
         ng generate component home
+        cd ..
         git add .
         git commit -m "Scaffolded Angular component"
         git push --set-upstream origin main

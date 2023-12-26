@@ -33,9 +33,17 @@ jobs:
         git config user.email "paccarini.bar@outlook.com"
         git config user.name "P4dr4"
         git checkout -b main
-        git pull origin main --ff-only
+        git pull origin main --ff-only  # Pull latest changes
         npm install -g @angular/cli
         ng new portfolio --minimal --skip-git --skip-tests
         cd portfolio
         ng generate component home
+        git add .
+        git commit -m "Scaffolded Angular component"
         git push --set-upstream origin main
+
+    - name: Merge changes from main
+      run: |
+        git fetch origin main
+        git merge origin/main --no-ff
+        git push origin main

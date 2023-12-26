@@ -27,6 +27,8 @@ jobs:
         ng new portfolio --minimal --skip-git --skip-tests
         cd portfolio
         ng generate component home
+        cd ..
+        ls
 
     - name: Configure Git and Push Changes
       run: |

@@ -10,6 +10,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Path
+      run: |
+       pwd       
     - name: Checkout repository
       uses: actions/checkout@v2
 
@@ -19,7 +22,13 @@ jobs:
         node-version: '18.13'
 
     - name: Install Angular CLI
-      run: npm install -g @angular/cli
+      run: npm install -g @angular/cli    
+      
+    - name: Configure Git and Push Changes
+      run: |
+        git config user.email "paccarini.bar@outlook.com"
+        git config user.name "P4dr4"
+        git checkout -b main
 
     - name: Scaffold Angular Application
       run: |
@@ -28,13 +37,7 @@ jobs:
         cd portfolio
         ng generate component home
         cd ..
-        ls
-
-    - name: Configure Git and Push Changes
-      run: |
-        git config user.email "paccarini.bar@outlook.com"
-        git config user.name "P4dr4"
-        git checkout -b main
+        pwd
         git push origin main
         git add .
         git commit -m "Scaffolded Angular component"

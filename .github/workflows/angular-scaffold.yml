@@ -33,7 +33,7 @@ jobs:
         git config user.email "paccarini.bar@outlook.com"
         git config user.name "P4dr4"
         git checkout -b main
-        git pull origin main --ff-only  # Pull latest changes
+        git pull origin main
         npm install -g @angular/cli
         ng new portfolio --minimal --skip-git --skip-tests
         cd portfolio

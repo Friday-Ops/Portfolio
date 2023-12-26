@@ -23,6 +23,7 @@ jobs:
 
     - name: Scaffold Angular Component
       run: |
+        ls
         ng generate component portfolio
 
     - name: Commit and Push Changes

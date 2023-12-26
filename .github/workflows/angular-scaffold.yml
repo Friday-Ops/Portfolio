@@ -20,16 +20,18 @@ jobs:
 
     - name: Install Angular CLI
       run: npm install -g @angular/cli
-
-    - name: Scaffold Angular Component
+      
+    - name: Scaffold Angular Application
       run: |
-        ls
-        ng generate component portfolio
+        npm install -g @angular/cli
+        ng new portfolio --minimal --skip-git --skip-tests
+        cd portfolio
+        ng generate component home
 
     - name: Commit and Push Changes
       run: |
-        git config user.email "you@example.com"
-        git config user.name "Your Name"
+        git config user.email "paccarini.bar@outlook.com"
+        git config user.name "P4dr4"
         git checkout main
         git merge init-branch
         git push

@@ -32,6 +32,6 @@ jobs:
       run: |
         git config user.email "paccarini.bar@outlook.com"
         git config user.name "P4dr4"
-        git checkout main
+        git checkout -b main
         git merge init-branch
         git push

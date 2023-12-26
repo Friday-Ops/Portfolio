@@ -33,5 +33,8 @@ jobs:
         git config user.email "paccarini.bar@outlook.com"
         git config user.name "P4dr4"
         git checkout -b main
-        git merge init-branch
+        npm install -g @angular/cli
+        ng new portfolio --minimal --skip-git --skip-tests
+        cd portfolio
+        ng generate component home
         git push --set-upstream origin main
